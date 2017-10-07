@@ -22,7 +22,7 @@ class AlunoController extends Controller
         $aluno = new Aluno;
         $aluno->name        = $request->name;
         $aluno->matricula = $request->matricula;
-        $aluno->senha = $request->senha;
+        $aluno->password = $request->password;
         $aluno->save();
         return redirect()->route('alunos.index')->with('message', 'Aluno created successfully!');
     }
@@ -43,7 +43,7 @@ class AlunoController extends Controller
         $aluno = Product::findOrFail($id);
         $aluno->name        = $request->name;
         $aluno->matricula = $request->matricula;
-        $aluno->senha = $request->senha;
+        $aluno->password = $request->password;
         $aluno->save();
         return redirect()->route('alunos.index')->with('message', 'Product updated successfully!');
     }

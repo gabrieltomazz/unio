@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Aluno extends Model
+class Aluno extends User
 {
-    protected $fillable = ['name','matricula', 'senha'];
+    protected $fillable = ['matricula'];
     protected $guarded = ['id', 'created_at', 'update_at'];
-    protected $hidden = ['senha'];
     protected $table = 'alunos';
 }

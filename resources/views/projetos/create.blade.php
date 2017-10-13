@@ -3,12 +3,12 @@
 <html>
 <head>
     <title>Look! I'm CRUDding</title>
-    <link href="{{ asset('css/create_style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
 
-<!-- <nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
     <div class="navbar-header">
         <a class="navbar-brand" href="{{ URL::to('projetos') }}">Nerd Alert</a>
     </div>
@@ -16,112 +16,58 @@
         <li><a href="{{ URL::to('projetos') }}">View All projetos</a></li>
         <li><a href="{{ URL::to('projetos/create') }}">Create a Project</a>
     </ul>
-</nav> -->
+</nav>
 
 <h1>Create a Project</h1>
 
+<!-- if there are creation errors, they will show here -->
+{{ HTML::ul($errors->all()) }}
 
-<form class="" action="/projetos" method="POST">
+{{ Form::open(array('url' => 'projetos')) }}
 
-        <fieldset>
-          <label class="col-md-4 control-label">Título do Projeto</label>  
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input  name="titulo" placeholder="Título" class="form-control"  type="text" >
-            </div>
-          </div>
-        </fieldset>
+    <div class="form-group">
+        {{ Form::label('name', 'Titulo') }}
+        {{ Form::text('titulo', Input::old('titulo'), array('class' => 'form-control')) }}
+    </div>
 
-        <!-- Text input-->
+    <div class="form-group">
+        {{ Form::label('apresentacao_do_problema', 'Apresentação do Problema') }}
+        {{ Form::textarea('apresentacao_do_problema', Input::old('apresentacao_do_problema'), array('class' => 'form-control')) }}
+    </div>
 
-        <fieldset>
-          <label class="col-md-4 control-label" >Apresentação do Projeto</label> 
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <textarea name="apresentacao" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
+    <div class="form-group">
+        {{ Form::label('estado_da_arte', 'Estado da Arte') }}
+        {{ Form::textarea('estado_da_arte', Input::old('estado_da_arte'), array('class' => 'form-control')) }}
+    </div>
 
-         <fieldset>
-          <label class="col-md-4 control-label" >Estado da arte</label> 
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <textarea name="estado-arte" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
+    <div class="form-group">
+        {{ Form::label('justificativa_do_projeto', 'Justificativa do Projeto') }}
+        {{ Form::textarea('justificativa_do_projeto', Input::old('justificativa_do_projeto'), array('class' => 'form-control')) }}
+    </div>
 
-         <fieldset>
-          <label class="col-md-4 control-label" >Justificativa do Projeto</label> 
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <textarea name="justificativa" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
+    <div class="form-group">
+        {{ Form::label('objetivo', 'Objetivo') }}
+        {{ Form::textarea('objetivo', Input::old('objetivo'), array('class' => 'form-control')) }}
+    </div>
 
-        <!-- Text input-->
-        <fieldset>
-          <label class="col-md-4 control-label">Objetivo</label>  
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-              <textarea name="objetivo" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
+    <div class="form-group">
+        {{ Form::label('metodo', 'Método') }}
+        {{ Form::textarea('metodo', Input::old('metodo'), array('class' => 'form-control')) }}
+    </div>
 
+    <div class="form-group">
+        {{ Form::label('cronograma', 'Método') }}
+        {{ Form::text('cronograma', Input::old('cronograma'), array('class' => 'form-control')) }}
+    </div>
 
-        <!-- Text input-->
+    <div class="form-group">
+        {{ Form::label('ref_bibliograficas', 'Referências Bibliográficas') }}
+        {{ Form::text('ref_bibliograficas', Input::old('ref_bibliograficas'), array('class' => 'form-control')) }}
+    </div>
 
-        <fieldset>
-          <label class="col-md-4 control-label">Método</label>  
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-              <textarea name="metodo" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
+    {{ Form::submit('Create the Project!', array('class' => 'btn btn-primary')) }}
 
-         <fieldset>
-          <label class="col-md-4 control-label" >Cronograma</label> 
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input name="cronograma" class="form-control"  type="text" ></input>
-            </div>
-          </div>
-        </fieldset>
-
-         <fieldset>
-          <label class="col-md-4 control-label" >Referências Bibliográficas</label> 
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <textarea name="justificativa" class="form-control" rows="4" cols="50"></textarea>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- Button -->
-        <div class="form-group">
-          <label class="col-md-4 control-label"></label>
-          <div class="col-md-4">
-            <button type="submit" class="btn btn-warning" >Criar<span class="glyphicon glyphicon-send"></span></button>
-          </div>
-        </div>
-
-      </fieldset>
-
-  
-
-</form>
+{{ Form::close() }}
 
 </div>
 </body>

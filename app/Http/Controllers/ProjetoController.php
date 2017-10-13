@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\Request;
+
+use Illuminate\Http\Request;
 use App\Projeto;
 
 class ProjetoController extends Controller
@@ -17,7 +18,7 @@ class ProjetoController extends Controller
         return view('projetos.create');
     }
   
-    public function store(ProjetoRequest $request)
+    public function store(Request $request)
     {
         $projeto = new Projeto;
         $projeto->titulo = $request->titulo;

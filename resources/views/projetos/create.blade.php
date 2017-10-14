@@ -56,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('cronograma', 'Método') }}
+        {{ Form::label('cronograma', 'Cronograma') }}
         {{ Form::text('cronograma', Input::old('cronograma'), array('class' => 'form-control')) }}
     </div>
 

@@ -1488,7 +1488,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/css-selector",
@@ -1541,7 +1545,11 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/debug",
@@ -1597,7 +1605,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1660,7 +1672,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/finder",
@@ -1709,7 +1725,11 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/http-foundation",
@@ -1762,7 +1782,11 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-05 23:10:23"
+=======
+            "time": "2017-10-05T23:10:23+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/http-kernel",
@@ -1848,7 +1872,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-05 23:40:19"
+=======
+            "time": "2017-10-05T23:40:19+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1956,7 +1984,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/routing",
@@ -2034,7 +2066,11 @@
                 "uri",
                 "url"
             ],
+<<<<<<< Updated upstream
             "time": "2017-10-02 07:25:00"
+=======
+            "time": "2017-10-02T07:25:00+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/translation",
@@ -2099,7 +2135,11 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/var-dumper",
@@ -2167,7 +2207,11 @@
                 "debug",
                 "dump"
             ],
+<<<<<<< Updated upstream
             "time": "2017-10-02 06:42:24"
+=======
+            "time": "2017-10-02T06:42:24+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -3228,7 +3272,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< Updated upstream
             "time": "2017-10-07 17:53:53"
+=======
+            "time": "2017-10-07T17:53:53+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "phpunit/phpunit-mock-objects",

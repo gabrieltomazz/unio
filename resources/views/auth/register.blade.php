@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="<?php echo asset('css/register.css')?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script href="{{ asset('js/register.js') }}"></script>
+  <script src ="{{ asset('js/register.js') }}"></script>
   <title></title>
 </head>
 
@@ -19,8 +19,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">                        
                             <div class="btn-group">
-                                <button type="button" onclick="testaAluno()" data-toggle="collapse" href="#collapse1"class="btn btn-primary">Aluno</button>
-                                <button type="button" onclick= "testaAluno()" data-toggle="collapse" href="#collapse2" class="btn btn-primary">Professor</button>
+                                <button type="button"  data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
+                                <button type="button" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
                             </div>
     
                     </div>

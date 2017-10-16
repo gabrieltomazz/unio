@@ -1,10 +1,10 @@
 
 function testaAluno() {
 	//Will return true if uncollapsed
-formAlunoAberto = $('#formAlunoAberto').hasClass('in');
+var formAlunoAberto = $('#formAluno').hasClass('in');
 
 //Will return true if in the process of collapsing
-formAlunoAbrindo = $('#collapseDiv').hasClass('collapsing');
+var formAlunoAbrindo = $('formAluno').hasClass('collapsing');
 
 
 

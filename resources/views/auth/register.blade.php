@@ -32,7 +32,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                                <label for="name" class="col-md-4 control-label">Nome:</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                <label for="email" class="col-md-4 control-label">E-mail:</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -59,8 +59,44 @@
                                 </div>
                             </div>
 
+
+                           
+
+                            <div class="form-group">
+                                <label for="comment" class="col-md-4 control-label">Biografia:</label>
+
+                                <div class="col-md-6">
+                                    
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Areas" class="col-md-4 control-label">Áreas de interesse:</label>
+
+                                <div class="col-md-6">
+                                    <label><input type="checkbox" value="">Option 1 </label>
+                                    <label><input type="checkbox" value="">Option 2 </label>
+                                    <label><input type="checkbox" value="">Option 3 </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sel1" class="col-md-4 control-label" >Universidade:</label>
+                                <div class="col-md-6">
+                                    
+                                    <select class="form-control" id="sel1">
+                                        <option>UnB</option>
+                                        <option>Usp</option>
+                                        <option>Urgs</option>
+                                        <option>UfRJ</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
+                                <label for="password" class="col-md-4 control-label">Senha:</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control" name="password" required>
@@ -73,8 +109,9 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                                <label for="password-confirm" class="col-md-4 control-label">Confirme a senha:</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -84,11 +121,13 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Registrar
                                     </button>
                                 </div>
                             </div>
                             </form>
+
+
 
                         </div>
                         <div class="panel-footer">Panel Footer</div>

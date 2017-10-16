@@ -6,6 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src ="{{ asset('js/register.js') }}"></script>
+  @include('base.fileUploadInclude')
   <title></title>
 </head>
 
@@ -94,6 +95,18 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="sel1" class="col-md-4 control-label" >Currículo:</label>
+                                <div class="col-md-6">
+                                    <div class="file-loading">
+                                        <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
+    data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["pdf"]' data-msg-placeholder="Select {files} for upload...">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                           
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="col-md-4 control-label">Senha:</label>
@@ -166,6 +179,8 @@
                                     @endif
                                 </div>
                             </div>
+
+
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="col-md-4 control-label">Password</label>

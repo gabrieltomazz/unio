@@ -8,15 +8,9 @@
 <body>
 <div class="container">
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('projetos') }}">Nerd Alert</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('projetos') }}">View All projetos</a></li>
-        <li><a href="{{ URL::to('projetos/create') }}">Create a Project</a>
-    </ul>
-</nav>
+
+
+@include('base.navbar')
 
 <h1>Create a Project</h1>
 

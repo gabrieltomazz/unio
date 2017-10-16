@@ -10,12 +10,20 @@ body{
 
 }
 
-#BotaoSelect{
+.panel-body{
+	text-align: center;
+}
+
+.form-group{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+/*#BotaoSelect{
 
 	width: 40%;
 	margin-left: 30%;
 	margin-right: 30%	
-}
+}*/
 
 .btn-group{
 

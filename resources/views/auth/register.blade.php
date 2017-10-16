@@ -19,8 +19,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">                        
                             <div class="btn-group">
-                                <button type="button"  data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
-                                <button type="button" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
+                                <button type="button" id="btn-aluno" data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
+                                <button type="button" id="btn-professor" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
                             </div>
     
                     </div>
@@ -101,7 +101,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                                <label for="name" class="col-md-4 control-label">Name Professor</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -173,7 +173,8 @@
             </div>
         </div>
     </div>
-
+<script src ="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src ="{{ asset('js/register.js') }}"></script>
 </body>
 
 </html>

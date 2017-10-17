@@ -166,10 +166,19 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {{ Form::submit('Create the Project!', array('class' => 'btn btn-primary')) }}
+
+                            {{ Form::close() }}
+
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
         </div>
     </div>
 

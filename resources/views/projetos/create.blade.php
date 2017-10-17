@@ -8,16 +8,6 @@
 <body>
 <div class="container">
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('projetos') }}">Nerd Alert</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('projetos') }}">View All projetos</a></li>
-        <li><a href="{{ URL::to('projetos/create') }}">Create a Project</a>
-    </ul>
-</nav>
-
 <h1>Create a Project</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -68,6 +58,9 @@
     {{ Form::submit('Create the Project!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
+<br>
+<br>
+<br>
 
 </div>
 </body>

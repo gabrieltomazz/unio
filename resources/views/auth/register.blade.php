@@ -1,3 +1,7 @@
+<?php use App\Http\Controllers\UniversidadeController;
+// $universidades = UniversidadeController::getUniversidades();
+$universidades = UniversidadeController::getListUniversidades(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,6 +149,7 @@
 
                     <div id="FormProfessor" class="panel-collapse collapse">
                         <div class="panel-body">
+                     
 
                            {{ HTML::ul($errors->all()) }}
 
@@ -181,7 +186,7 @@
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::select('universidade', array('0' => 'Selecione a Universidade', '1' => 'UnB', '2' => 'UFMG', '3' => 'USP'), Input::old('universidade'), array('class' => 'form-control')) }}
+                                    {{ Form::select('universidade_id', $universidades) }}
 
                                 </div>
                             </div>

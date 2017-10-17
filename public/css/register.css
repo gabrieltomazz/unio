@@ -1,5 +1,6 @@
-.panel {
-	margin-top: 20%;
+.panel.panel-default{
+	margin-top: 25%;
+	border: 0px;
 }
 
 body{
@@ -9,26 +10,12 @@ body{
     background-size: cover;
 
 }
+.panel-heading a{
+	text-decoration: none;
 
-.panel-body{
-	text-align: center;
 }
 
-.form-group{
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-/*#BotaoSelect{
-
-	width: 40%;
-	margin-left: 30%;
-	margin-right: 30%	
-}*/
-
-.btn-group{
-
- 
-
-
+#butaoAluno;{
+	position: center;
 }
 

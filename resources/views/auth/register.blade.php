@@ -10,162 +10,104 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{{ asset('js/register.js') }}"></script>
+    @include('base.fileUploadInclude')
     <title></title>
 </head>
 
+
 <body>
+    @include('base.navbar')
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+
                 <div class="panel panel-default">
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"> Registro </h4>
+                    <div class="panel-heading">                        
+                        <div class="btn-group">
+                            <button type="button" id="btn-aluno" data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
+                            <button type="button" id="btn-professor" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
+                        </div>
 
-                                <a  href="#formAlun">
-                                    <button id= "botaoAluno" class="btn btn-primary">Aluno</button>
-                                </a>
+                    </div>
 
-                                <a  href="#formProf">
-                                    <button id ="botaoProf" class="btn btn-primary">Professor</button>
-                                </a>
-                            
-                                <div  class="panel">
+                    <div id="formAluno" class="panel-collapse collapse">
+                        <div class="panel-body">
 
-                                    <div class="panel-body">
-                                        <div class="panel-body">
-                                            <div id = "formAlun">
-                                                <form  class="form-horizontal" method="POST" action="{{ route('register') }}">
-                                                    {{ csrf_field() }}
+                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
 
-                                                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                        <label for="name" class="col-md-4 control-label">Nome</label>
-                                                        <div class="col-md-6">
-                                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label for="name" class="col-md-4 control-label">Nome:</label>
 
-                                                            @if ($errors->has('name'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                                        <label for="email" class="col-md-4 control-label">Endereço de E-mail</label>
+                                        @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
 
-                                                        <div class="col-md-6">
-                                                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email" class="col-md-4 control-label">E-mail:</label>
 
-                                                            @if ($errors->has('email'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
+                                    <div class="col-md-6">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                                                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                        <label for="password" class="col-md-4 control-label">Senha</label>
+                                        @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
 
-                                                        <div class="col-md-6">
-                                                            <input id="password" type="password" class="form-control" name="password" required>
 
-                                                            @if ($errors->has('password'))
-                                                            <span class="help-block">
-                                                                <strong>{{ $errors->first('password') }}</strong>
-                                                            </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="form-group">
-                                                        <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
-                                                        <div class="col-md-6">
-                                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                                        </div>
-                                                    </div>
+                                <div class="form-group">
+                                    <label for="comment" class="col-md-4 control-label">Biografia:</label>
 
-                                                    <div class="form-group">
-                                                        <div class="col-md-6 col-md-offset-4">
-                                                            <button type="submit" class="btn btn-primary">
-                                                                Registrar
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                    <div class="col-md-6">
 
-                                            <div id = "formProf">
-                                                <form  class="form-horizontal" method="POST" action="{{ route('register') }}">
-                                                {{ csrf_field() }}
+                                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                                    </div>
+                                </div>
 
-                                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                    <label for="name" class="col-md-4 control-label">Nombre</label>
-                                                    <div class="col-md-6">
-                                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <div class="form-group">
+                                    <label for="Areas" class="col-md-4 control-label">Áreas de interesse:</label>
 
-                                                        @if ($errors->has('name'))
-                                                            <span class="help-block">
-                                                                <strong>{{ $errors->first('name') }}</strong>
-                                                            </span>
-                                                        @endif
-                                                    </div>
-                                                </div>
+                                    <div class="col-md-6">
+                                        <label><input type="checkbox" value="">Option 1 </label>
+                                        <label><input type="checkbox" value="">Option 2 </label>
+                                        <label><input type="checkbox" value="">Option 3 </label>
+                                    </div>
+                                </div>
 
-                                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                                    <label for="email" class="col-md-4 control-label">Endereço de E-mail</label>
+                                <div class="form-group">
+                                    <label for="sel1" class="col-md-4 control-label" >Universidade:</label>
+                                    <div class="col-md-6">
 
-                                                    <div class="col-md-6">
-                                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                        <select class="form-control" id="sel1">
+                                            <option>UnB</option>
+                                            <option>Usp</option>
+                                            <option>Urgs</option>
+                                            <option>UfRJ</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                                                        @if ($errors->has('email'))
-                                                            <span class="help-block">
-                                                                <strong>{{ $errors->first('email') }}</strong>
-                                                            </span>
-                                                        @endif
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                    <label for="password" class="col-md-4 control-label">Senha</label>
-
-                                                    <div class="col-md-6">
-                                                        <input id="password" type="password" class="form-control" name="password" required>
-
-                                                        @if ($errors->has('password'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                        </span>
-                                                        @endif
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                                                    <div class="col-md-6">
-                                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-md-6 col-md-offset-4">
-                                                        <button type="submit" class="btn btn-primary">
-                                                            Registrar
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                </form>
-
-                                            </div>
-
-                                            <div class="panel-footer">Panel Footer</div>
+                                <div class="form-group">
+                                    <label for="sel1" class="col-md-4 control-label" >Currículo:</label>
+                                    <div class="col-md-6">
+                                        <div class="file-loading">
+                                            <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
+                                            data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["pdf"]' data-msg-placeholder="Select {files} for upload...">
                                         </div>
 
-                                        
                                     </div>
                                 </div>
 
@@ -202,22 +144,23 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                     </div>
                                 </div>
                             </form>
+
+
+
                         </div>
                         <div class="panel-footer">Panel Footer</div>
                     </div>
 
                     <div id="FormProfessor" class="panel-collapse collapse">
                         <div class="panel-body">
-                     
+                            {{ HTML::ul($errors->all()) }}
 
-                           {{ HTML::ul($errors->all()) }}
-
-                           {{ Form::open(array('url' => 'professores')) }}
+                            {{ Form::open(array('url' => '/register')) }}
 
                             <div class="form-group">
                                 {{ Form::label('name', 'Titulo', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::text('titulo', Input::old('titulo'), array('class' => 'form-control')) }}
+                                    {{ Form::text('name', Input::old('titulo'), array('class' => 'form-control')) }}
                                 </div>
                             </div>
 
@@ -231,7 +174,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             <div class="form-group">
                                 {{ Form::label('senha', 'Senha', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::password('senha', Input::old('senha'), array('class' => 'form-control')) }}
+                                    {{ Form::password('password', ['class' => 'form-control'])}}
                                 </div>
                             </div>
 
@@ -245,33 +188,38 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::select('universidade_id', $universidades) }}
+                                    {{ Form::select('universidade_id', $universidades), array('class' => 'form-control')}}
 
                                 </div>
                             </div>
-
+               
                             <div class="form-group">
                                 {{ Form::label('biografia', 'Biografia', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
                                     {{ Form::textarea('biografia', Input::old('biografia'), array('class' => 'form-control')) }}
                                 </div>
                             </div>
+                            <div class="form-group">
+                                {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
 
-                            {{ Form::submit('Create the Project!', array('class' => 'btn btn-primary')) }}
-
-                            {{ Form::close() }}
-
+                                {{ Form::close() }}
+                            </div>
+                            
                         </div>
                     </div>
+
+
+
                 </div>
+
+
+
+
             </div>
-
-
-
-
         </div>
     </div>
-
+    <script src ="{{ asset('js/jquery-3.2.1.js') }}"></script>
+    <script src ="{{ asset('js/register.js') }}"></script>
 </body>
 
 </html>

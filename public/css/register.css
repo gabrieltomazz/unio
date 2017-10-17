@@ -10,7 +10,12 @@ body{
     background-size: cover;
 
 }
-.panel-heading a{
+
+.form-group{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+/*.panel-heading a{
 	text-decoration: none;
 
 }
@@ -18,4 +23,4 @@ body{
 #butaoAluno;{
 	position: center;
 }
-
+*/

@@ -26,56 +26,36 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                     <div class="panel-heading">                        
                         <div class="btn-group">
                             <button type="button" id="btn-aluno" data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
-                            <button type="button" id="btn-professor" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
+                            <button type="button" id="btn-professor" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
                         </div>
 
                     </div>
 
                     <div id="formAluno" class="panel-collapse collapse">
                         <div class="panel-body">
-
-                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                                {{ csrf_field() }}
-
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <label for="name" class="col-md-4 control-label">Nome:</label>
-
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                        @if ($errors->has('name'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email" class="col-md-4 control-label">E-mail:</label>
-
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                        @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-
-
+                            {{ Form::open(array('url' => '/register')) }}
 
                                 <div class="form-group">
-                                    <label for="comment" class="col-md-4 control-label">Biografia:</label>
-
+                                    {{ Form::label('name', 'Nome', array('class' => 'col-md-4 control-label')) }}
                                     <div class="col-md-6">
-
-                                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                                        {{ Form::text('name', Input::old('nome'), array('class' => 'form-control')) }}
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    {{ Form::label('email', 'E-mail', array('class' => 'col-md-4 control-label')) }}
+                                    <div class="col-md-6">
+                                        {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    {{ Form::label('biografia', 'Biografia', array('class' => 'col-md-4 control-label')) }}
+                                    <div class="col-md-6">
+                                        {{ Form::textarea('biografia', Input::old('biografia'), array('class' => 'form-control')) }}
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="Areas" class="col-md-4 control-label">Áreas de interesse:</label>
@@ -88,15 +68,10 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="sel1" class="col-md-4 control-label" >Universidade:</label>
+                                    {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                     <div class="col-md-6">
+                                        {{ Form::select('universidade_id', $universidades,  Input::old('Universidade'), array('class' => 'form-control')) }}
 
-                                        <select class="form-control" id="sel1">
-                                            <option>UnB</option>
-                                            <option>Usp</option>
-                                            <option>Urgs</option>
-                                            <option>UfRJ</option>
-                                        </select>
                                     </div>
                                 </div>
 
@@ -106,6 +81,8 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                         <div class="file-loading">
                                             <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
                                             data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["pdf"]' data-msg-placeholder="Select {files} for upload...">
+
+                                            {{ Form::file('universidade_id', Input::old('Universidade'), array('class' => 'file', 'type' => 'file')) }}
                                         </div>
 
                                     </div>
@@ -143,10 +120,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                         </button>
                                     </div>
                                 </div>
-                            </form>
-
-
-
+                            {{ Form::close() }}
                         </div>
                         <div class="panel-footer">Panel Footer</div>
                     </div>
@@ -188,7 +162,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::select('universidade_id', $universidades), array('class' => 'form-control')}}
+                                    {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
 
                                 </div>
                             </div>
@@ -200,9 +174,11 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
-
+                                <div class="col-md-6">
+                                    {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
                                 {{ Form::close() }}
+                                </div>
+                                
                             </div>
                             
                         </div>

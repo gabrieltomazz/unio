@@ -25,6 +25,12 @@ class CreateUsersTable extends Migration
             $table->integer('universidade_id')->unsigned();
             $table->foreign('universidade_id')->references('id')->on('universidades')->onDelete('cascade');
 
+            $table->integer('tipo_user_id')->unsigned();
+            $table->foreign('tipo_user_id')->references('id')->on('tipo_users')->onDelete('cascade');
+
+            $table->integer('cursos_id')->unsigned();
+            $table->foreign('cursos_id')->references('id')->on('cursos')->onDelete('cascade');
+
         });
     }
 

@@ -26,7 +26,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                     <div class="panel-heading">                        
                         <div class="btn-group">
                             <button type="button" id="btn-aluno" data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
-                            <button type="button" id="btn-professor" onclick= "testaAluno()" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
+                            <button type="button" id="btn-professor" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
                         </div>
 
                     </div>
@@ -188,7 +188,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::select('universidade_id', $universidades), array('class' => 'form-control')}}
+                                    {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
 
                                 </div>
                             </div>
@@ -200,9 +200,11 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
-
+                                <div class="col-md-6">
+                                    {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
                                 {{ Form::close() }}
+                                </div>
+                                
                             </div>
                             
                         </div>

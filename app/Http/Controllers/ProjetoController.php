@@ -35,7 +35,11 @@ class ProjetoController extends Controller
   
     public function show($id)
     {
-        //
+        $projeto = Projeto::find($id);
+
+        // show the view and pass the nerd to it
+        return View::make('projetos.show')
+            ->with('projeto', $projeto);
     }
   
     public function edit($id)
@@ -44,7 +48,7 @@ class ProjetoController extends Controller
         return view('projetos.edit',compact('projeto'));
     }
   
-    public function update(ProjetoRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $projeto = Projeto::findOrFail($id);
      	$projeto->titulo = $request->titulo;

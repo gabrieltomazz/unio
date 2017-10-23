@@ -1,3 +1,8 @@
+<?php 
+use App\Http\Controllers\UniversidadeController;
+// $universidades = UniversidadeController::getUniversidades();
+$universidades = UniversidadeController::getListUniversidades()?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,15 +24,18 @@
         <div> 
           <h1>Unio</h1>
           <h3>Integrando alunos e professores</h3>
-          <select  id = "form-control-universidade" class="form-control">
-            <option>UnB</option>
-            <option>USP</option>
-          </select>  
+
+          
+          <div class="form-group"  id ="form-control-universidade">
+              {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
+
+          </div>
 
           <select  id = "form-control" class="form-control">
             <option>Aluno</option>
             <option>Professor</option>
-          </select>    
+          </select>
+          {{ Form::close() }}  
 
         </div>
 

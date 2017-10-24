@@ -1,0 +1,52 @@
+
+body{
+    background-image: url(/books.jpg);
+     background-repeat: no-repeat;
+    background-position: auto;  
+    background-size: cover;
+
+}
+.row.vertical-offset-100{
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+
+
+.centro{
+	width: 50%;
+  margin: 0 auto;
+}
+
+#welcome-nav{
+   font-weight: bold;
+   border-width: 0px;
+   border-color: white;
+   color: white;
+
+}
+.nav .navbar-nav .navbar-right li a{
+    font-size: 120px;
+}
+
+
+
+
+
+#form-control{
+    margin-bottom: 5%;
+	margin-left: 25%;
+	margin-right:25%;
+	width: 50%;
+}
+
+#form-control-universidade{
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+}
+
+
+

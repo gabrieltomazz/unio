@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo asset('css/login.css')?>">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    
-    <title></title>
-</head>
+@extends('base.layout')
 
-<body>
+@section('header')
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
+
+@section('content')
+
     @include('base.navbar')
     <div class="container">
         <div class="row">
@@ -76,5 +71,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection

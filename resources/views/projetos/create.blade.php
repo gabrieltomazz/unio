@@ -18,7 +18,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 
-                    <h1>Create a Project</h1>
+                    <h1>Criar Projeto</h1>
                 </div>
                 <div class="panel-body">
 

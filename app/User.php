@@ -17,7 +17,7 @@ class User extends Authenticatable
 
    
     protected $fillable = [
-        'name', 'email', 'password','departamento','universidade_id','biografia'
+        'cursos_id','tipo_user_id','universidade_id','name', 'email', 'password','biografia'
     ];
 
     /**
@@ -28,4 +28,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tipoUser(){
+        return $this->belongsTo(TipoUser::class);
+    }
+
+    public function curso(){
+        return $this->belongsTo(Curso::class);
+    }
+
+    public function universidade(){
+        return $this->belongsTo(Universidade::class);
+    }
+
+    public function departamento(){
+        return $this->hasMany(Departamento::class);
+    }
 }

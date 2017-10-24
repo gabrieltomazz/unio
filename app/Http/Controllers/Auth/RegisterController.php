@@ -67,7 +67,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'departamento'=>$data['departamento'],
             'universidade_id'=>$data['universidade_id'],
             'biografia'=>$data['biografia']
         ]);
@@ -77,14 +76,16 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        $user->name = $request->nome;
-        $user->email = $request->email;
-        $user->senha = $request->password;
-        $user->departamento = $request->departamento;
+        $user->fill($request->all());
         $user->universidade_id = $request->universidade_id;
-        $user->biografia = $request->biografia;
+        $user->curso_id = $request->curso_id; 
 
         $user->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');
     }
+
+
+
+
+
 }

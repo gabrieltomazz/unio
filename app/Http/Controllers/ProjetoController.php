@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Projeto;
+use Illuminate\Support\Facades\View;
 
 class ProjetoController extends Controller
 {
@@ -38,8 +39,9 @@ class ProjetoController extends Controller
         $projeto = Projeto::find($id);
 
         // show the view and pass the nerd to it
-        return View::make('projetos.show')
-            ->with('projeto', $projeto);
+
+
+        return View::make('projetos.show')->with('projeto', $projeto);
     }
   
     public function edit($id)

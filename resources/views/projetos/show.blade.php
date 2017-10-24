@@ -1,25 +1,84 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{$projeto->titulo}}</title>
-	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-	<h1>Showing {{ $projeto->name }}</h1>
+@extends('base.layout')
 
-    <div class="jumbotron text-center">
-        <h2>{{ $projeto->titulo }}</h2>
-        <p>
-            <strong>Titulo:</strong> {{ $projeto->email }}<br>
-            <strong>Apresentação:</strong> {{ $projeto->apresentacao_do_problema }}<br>
-            <strong>Estado da Arte:</strong> {{ $projeto->estado_da_arte }}<br>
-            <strong>Justificativa do Projeto:</strong> {{ $projeto->justificativa_do_projeto}}<br>
-            <strong>Objetivo:</strong> {{ $projeto->objetivo }}<br>
-            <strong>Metodo:</strong> {{ $projeto->metodo}}<br>
-            <strong>Apresentação:</strong> {{ $projeto->apresentacao_do_problema }}<br>
-            <strong>Cronograma</strong>{{ $projeto->cronograma}}<br>
-            <strong>Referências Bibliográficas:</strong> {{ $projeto->ref_bibliograficas }}<br>
-        </p>
+@section('header')
+    
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+    
+
+@endsection
+
+s
+@section('content')
+
+@include('base.navbar')
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+	               <h1>Projeto {{ $projeto->titulo }}</h1>
+                </div>
+                <div class="panel-body">
+                    <div >
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                
+                            </thead>
+                            
+                            <tbody>
+
+                                
+                                <tr>
+                                    <td>Apresentação</td>
+                                    <td>{{$projeto->apresentacao_do_problema }}</td>
+                                <tr>
+                                    <td>Estado da Arte</td>
+                                    <td>{{$projeto->estado_da_arte }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Justificativa do Projeto</td>
+                                    <td>{{$projeto->justificativa_do_projeto }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Objetivo</td>
+                                    <td>{{$projeto->objetivo }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Método</td>
+                                    <td>{{$projeto->metodo }}</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Apresentação</td>
+                                    <td>{{$projeto->apresentacao_do_problema }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cronograma</td>
+
+                                    <td>{{$projeto->cronograma }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Referências Bibliográficas</td>
+                                    <td>{{$projeto->ref_bibliograficas }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+
+@endsection
+

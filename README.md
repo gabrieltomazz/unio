@@ -58,3 +58,22 @@ composer global require "laravel/installer"
 3. Apague o `;` do começo da linha, ficará assim  `extension=php_pdo_mysql.dll`.
 4. Salve as alterações.
 
+---
+
+## Baixando o projeto unio
+
+Execute os comandos para clonar o projeto:
+
+```sh
+git clone https://github.com/gabrieltomazz/unio.git
+```
+
+---
+
+## Executando testes
+
+Execute os comandos para executar os testes:
+
+```sh
+ .\vendor\bin\phpunit
+```

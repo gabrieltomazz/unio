@@ -68,6 +68,22 @@ Execute os comandos para clonar o projeto:
 git clone https://github.com/gabrieltomazz/unio.git
 ```
 
+Atualize as dependências usando o composer:
+
+```sh
+composer update
+```
+
+Crie o banco de dados:
+
+?????????
+
+Execute o comando para criar as tabelas:
+
+```sh
+php artisan migrate
+```
+
 ---
 
 ## Executando testes

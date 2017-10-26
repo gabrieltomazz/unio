@@ -1,3 +1,7 @@
+<?php use App\Http\Controllers\DepartamentoController;
+// $Departamentos = DepartamentoController::getDepartamentos();
+$departamentos = DepartamentoController::getListDepartamentos(); ?>
+
 @extends('base.layout')
 
 
@@ -75,6 +79,14 @@
                             {{ Form::label('cronograma', 'Cronograma', array('class' => 'col-md-4 control-label')) }}
                             <div class="col-md-6">
                                 {{ Form::text('cronograma', Input::old('cronograma'), array('class' => 'form-control')) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ Form::label('departamento', 'Departamento', array('class' => 'col-md-4 control-label')) }}
+                            <div class="col-md-6">
+                                {{ Form::select('departamento_id', $departamentos, Input::old('Departamento'), array('class' => 'form-control')) }}
+
                             </div>
                         </div>
 

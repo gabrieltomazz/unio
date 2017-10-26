@@ -23,8 +23,14 @@ class CreateProjetosTable extends Migration
             $table->longText("metodo");
             $table->char("cronograma", 100);
             $table->longText("ref_bibliograficas");
+
+            $table->integer('departamento_id')->unsigned();
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');;
+
             $table->timestamps();
         });
+
+        
     }
 
     /**

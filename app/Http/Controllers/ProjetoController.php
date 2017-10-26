@@ -29,6 +29,7 @@ class ProjetoController extends Controller
 		$projeto->objetivo = $request->objetivo;
 		$projeto->metodo = $request->metodo;
 		$projeto->cronograma = $request->cronograma;
+        $projeto->departamento_id = $request->departamento_id;
 		$projeto->ref_bibliograficas = $request->ref_bibliograficas;
         $projeto->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');
@@ -70,5 +71,11 @@ class ProjetoController extends Controller
         $projeto = Projeto::findOrFail($id);
         $projeto->delete();
         return redirect()->route('projetos.index')->with('alert-success','projeto hasbeen deleted!');
+    }
+
+    public function departamento($departamento_id){
+        $projetos = Projeto::findOrFail($departamento_id);
+        return view('projetos.departamento',['projetos' => $projetos]);
+
     }
 }

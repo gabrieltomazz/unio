@@ -22,4 +22,12 @@ Route::get('/login', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('projetos', 'ProjetoController');
+
+
+
+Route::group(['middleware' => 'auth'], function () { 
+
+	Route::resource('projetos', 'ProjetoController');
+
+
+});

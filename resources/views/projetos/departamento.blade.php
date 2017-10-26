@@ -1,3 +1,11 @@
+<?php use App\Http\Controllers\DepartamentoController;
+// $universidades = UniversidadeController::getUniversidades();
+$departamentos = DepartamentoController::getListDepartamentos(); ?>
+
+@extends('base.layout')
+
+
+
 @section('content')
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;  
 use App\Projeto;
 use Illuminate\Support\Facades\View;
 
@@ -14,6 +15,15 @@ class ProjetoController extends Controller
         return view('projetos.index',['projetos' => $projetos]);
     }
   
+    public function departamento($departamento_id){
+      
+ 
+        $projetos = DB::table('projetos')->where('departamento_id', $departamento_id)->get();
+
+     
+         // return View::make('projetos.departamento',['projetos' => $projetos]);
+         return View::make('projetos.departamento')->with('projetos', $projetos);
+    }
     public function create()
     {
         return view('projetos.create');
@@ -23,14 +33,14 @@ class ProjetoController extends Controller
     {
         $projeto = new Projeto;
         $projeto->titulo = $request->titulo;
-		$projeto->apresentacao_do_problema = $request->apresentacao_do_problema;
-		$projeto->estado_da_arte = $request->estado_da_arte;
-		$projeto->justificativa_do_projeto = $request->justificativa_do_projeto;
-		$projeto->objetivo = $request->objetivo;
-		$projeto->metodo = $request->metodo;
-		$projeto->cronograma = $request->cronograma;
+        $projeto->apresentacao_do_problema = $request->apresentacao_do_problema;
+        $projeto->estado_da_arte = $request->estado_da_arte;
+        $projeto->justificativa_do_projeto = $request->justificativa_do_projeto;
+        $projeto->objetivo = $request->objetivo;
+        $projeto->metodo = $request->metodo;
+        $projeto->cronograma = $request->cronograma;
         $projeto->departamento_id = $request->departamento_id;
-		$projeto->ref_bibliograficas = $request->ref_bibliograficas;
+        $projeto->ref_bibliograficas = $request->ref_bibliograficas;
         $projeto->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');
     }
@@ -54,14 +64,14 @@ class ProjetoController extends Controller
     public function update(Request $request, $id)
     {
         $projeto = Projeto::findOrFail($id);
-     	$projeto->titulo = $request->titulo;
-		$projeto->apresentacao_do_problema = $request->apresentacao_do_problema;
-		$projeto->estado_da_arte = $request->estado_da_arte;
-		$projeto->justificativa_do_projeto = $request->justificativa_do_projeto;
-		$projeto->objetivo = $request->objetivo;
-		$projeto->metodo = $request->metodo;
-		$projeto->cronograma = $request->cronograma;
-		$projeto->ref_bibliograficas = $request->ref_bibliograficas;
+        $projeto->titulo = $request->titulo;
+        $projeto->apresentacao_do_problema = $request->apresentacao_do_problema;
+        $projeto->estado_da_arte = $request->estado_da_arte;
+        $projeto->justificativa_do_projeto = $request->justificativa_do_projeto;
+        $projeto->objetivo = $request->objetivo;
+        $projeto->metodo = $request->metodo;
+        $projeto->cronograma = $request->cronograma;
+        $projeto->ref_bibliograficas = $request->ref_bibliograficas;
         $projeto->save();
         return redirect()->route('projetos.index')->with('message', 'projeto updated successfully!');
     }
@@ -73,9 +83,4 @@ class ProjetoController extends Controller
         return redirect()->route('projetos.index')->with('alert-success','projeto hasbeen deleted!');
     }
 
-    public function departamento($departamento_id){
-        $projetos = Projeto::findOrFail($departamento_id);
-        return view('projetos.departamento',['projetos' => $projetos]);
-
-    }
 }

@@ -17,9 +17,32 @@ $factory->define(App\User::class, function (Faker $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'name' => ('Yuri'),
+        'email' => ('admin@unio.com'),
+        'password' => bcrypt('teste'),
+        'biografia' => "Yuri Nao dá nem atenção",
         'remember_token' => str_random(10),
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+        // 'universidade_id' => 1,
+        // 'tipo_user_id' => 1,
+        // 'cursos_id' => 1,
     ];
 });
+
+// $factory->defineAs(App\User::class, function (Faker\Generator $faker) {
+//     return [
+//         'name' => ('Yuri'),
+//         'email' => ('unio@unio.com'), 
+//         'password' => bcrypt("teste"),
+//         'biografia' => "Yuri Nao dá nem atenção",
+//         'remember_token' => str_random(10),
+//         'created_at' => date("Y-m-d H:i:s"),
+//         'updated_at' => date("Y-m-d H:i:s"),
+//         'universidade_id' => 1,
+//         'tipo_user_id' => 1,
+//         'cursos_id' => 1,
+
+        
+//     ];
+// });

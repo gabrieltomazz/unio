@@ -76,14 +76,22 @@ composer update
 
 Crie o banco de dados:
 
-?????????
+crie o schema com nome "unio" utilizando o Workbench 
 
-Execute o comando para criar as tabelas:
+Execute o comando para criar as tabelas e inserir os dados :
 
 ```sh
-php artisan migrate
+php artisan migrate:refresh --seed
+
 ```
 
+Acessar a Aplicação após inserir o banco 
+
+```sh
+login: admin@unio.com
+seenha: teste
+
+```
 ---
 
 ## Executando testes

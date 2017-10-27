@@ -22,13 +22,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         
-            $table->integer('universidade_id')->unsigned();
+            $table->integer('universidade_id')->unsigned()->nullable();
             $table->foreign('universidade_id')->references('id')->on('universidades')->onDelete('cascade');
 
-            $table->integer('tipo_user_id')->unsigned();
+            $table->integer('tipo_user_id')->unsigned()->nullable();
             $table->foreign('tipo_user_id')->references('id')->on('tipo_users')->onDelete('cascade');
 
-            $table->integer('cursos_id')->unsigned();
+            $table->integer('cursos_id')->unsigned()->nullable();
             $table->foreign('cursos_id')->references('id')->on('cursos')->onDelete('cascade');
 
         });

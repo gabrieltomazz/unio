@@ -25,13 +25,13 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
             <div class="panel panel-default">
                 <div class="panel-heading">                        
                     <div class="btn-group">
-                        <button type="button" id="btn-aluno" data-toggle="collapse" href="#formAluno"class="btn btn-primary">Aluno</button>
-                        <button type="button" id="btn-professor" data-toggle="collapse" href="#FormProfessor" class="btn btn-primary">Professor</button>
+                        <button type="button" id="btn-aluno"  href="#formAluno"class="btn btn-primary">Aluno</button>
+                        <button type="button" id="btn-professor"  href="#FormProfessor" class="btn btn-primary">Professor</button>
                     </div>
 
                 </div>
 
-                <div id="formAluno" class="panel-collapse collapse">
+                <div id="formAluno">
                     <div class="panel-body">
                         {{ Form::open(array('url' => '/register')) }}
 
@@ -125,7 +125,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                     <div class="panel-footer">Panel Footer</div>
                 </div>
 
-                <div id="FormProfessor" class="panel-collapse collapse">
+                <div id="FormProfessor" >
                     <div class="panel-body">
                         {{ HTML::ul($errors->all()) }}
 

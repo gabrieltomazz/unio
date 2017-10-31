@@ -1,5 +1,5 @@
 .panel.panel-default{
-	margin-top: 25%;
+	margin-top: 15%;
 	border: 0px;
 }
 
@@ -14,6 +14,11 @@ body{
 .form-group{
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+#btn-registrar{
+	margin-left: 25%;
+    margin-right: 25%;
+   	width: 50%;
 }
 /*.panel-heading a{
 	text-decoration: none;

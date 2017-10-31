@@ -49,12 +49,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                {{ Form::label('biografia', 'Biografia', array('class' => 'col-md-4 control-label')) }}
-                                <div class="col-md-6">
-                                    {{ Form::textarea('biografia', Input::old('biografia'), array('class' => 'form-control')) }}
-                                </div>
-                            </div>
+                            
 
 
                             <div class="form-group">
@@ -67,11 +62,12 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
                             </div>
 
+                            
+
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
                                 <div class="col-md-6">
-                                    {{ Form::select('universidade_id', $universidades,  Input::old('Universidade'), array('class' => 'form-control')) }}
-
+                                    {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
                                 </div>
                             </div>
 
@@ -114,11 +110,18 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Registrar
-                                    </button>
+                                {{ Form::label('biografia', 'Biografia', array('class' => 'col-md-4 control-label')) }}
+                                <div class="col-md-6">
+                                    {{ Form::textarea('biografia', Input::old('biografia'), array('class' => 'form-control')) }}
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    {{ Form::submit('Registrar!', array('class' => 'btn btn-primary', 'id' => 'btn-registrar')) }}
+                                
+                                </div>
+                            
                             </div>
                         {{ Form::close() }}
                     </div>

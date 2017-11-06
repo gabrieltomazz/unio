@@ -7,7 +7,7 @@
 
 @endsection
 
-s
+
 @section('content')
 
 @include('base.navbar')

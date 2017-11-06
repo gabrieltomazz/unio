@@ -1,6 +1,9 @@
 <?php use App\Http\Controllers\UniversidadeController;
+use App\Http\Controllers\CursoController;
 // $universidades = UniversidadeController::getUniversidades();
-$universidades = UniversidadeController::getListUniversidades(); ?>
+$universidades = UniversidadeController::getListUniversidades(); 
+
+$cursos =CursoController::getListCursos(); ?>
 
 @extends('base.layout')
 @section('header')
@@ -49,6 +52,9 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 </div>
                             </div>
 
+                             <div class="col-md-6" style="display: none;">
+                                {{ Form::number('tipo_user_id', 1) }}
+                            </div>
                             
 
 
@@ -70,6 +76,14 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                     {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                            {{ Form::label('curso', 'Curso', array('class' => 'col-md-4 control-label')) }}
+                            <div class="col-md-6">
+                                {{ Form::select('curso_id', $cursos, Input::old('Curso'), array('class' => 'form-control')) }}
+
+                            </div>
+                        </div>
 
                             <div class="form-group">
                                 <label for="sel1" class="col-md-4 control-label" >Currículo:</label>
@@ -135,7 +149,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                         {{ Form::open(array('url' => '/register')) }}
 
                         <div class="form-group">
-                            {{ Form::label('name', 'Titulo', array('class' => 'col-md-4 control-label')) }}
+                            {{ Form::label('name', 'Nome', array('class' => 'col-md-4 control-label')) }}
                             <div class="col-md-6">
                                 {{ Form::text('name', Input::old('titulo'), array('class' => 'form-control')) }}
                             </div>
@@ -176,6 +190,9 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                                 {{ Form::textarea('biografia', Input::old('biografia'), array('class' => 'form-control')) }}
                             </div>
                         </div>
+                        <div class="col-md-6" style="display: none;">
+                            {{ Form::number('tipo_user_id', 2) }}
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6">
                                 {{ Form::submit('Registrar!', array('class' => 'btn btn-primary')) }}
@@ -183,6 +200,7 @@ $universidades = UniversidadeController::getListUniversidades(); ?>
                             </div>
                             
                         </div>
+
                         
                     </div>
                 </div>

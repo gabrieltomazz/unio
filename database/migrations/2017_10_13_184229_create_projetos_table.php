@@ -25,7 +25,11 @@ class CreateProjetosTable extends Migration
             $table->longText("ref_bibliograficas");
 
             $table->integer('departamento_id')->unsigned();
-            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');;
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
+
+            $table->integer('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+
 
             $table->timestamps();
         });

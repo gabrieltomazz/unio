@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,15 +27,36 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/users';
 
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
+
+    protected $username = 'email';
+
+    public function loginNameOrEmail(Request $request)
+    {
+        $field = filter_var($request->input('email'), FILTER_VALIDATE_EMAIL) ? 'email_address' : 'username';
+
+        $request->merge([$field => $request->input('email')]);
+
+        $this->username = $field;
+
+        return $this->login($request);
+
+    }
+
+
+    public function username()
+    {
+        return $this->username;
+    }
+
 }

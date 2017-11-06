@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'universidade_id'=>$data['universidade_id'],
+            'tipo_user_id'=>$data['tipo_user_id'],
             'biografia'=>$data['biografia']
         ]);
     }
@@ -80,6 +81,7 @@ class RegisterController extends Controller
         $user->fill($request->all());
         $user->universidade_id = $request->universidade_id;
         $user->curso_id = $request->curso_id; 
+        $user->tipo_user_id = $request->tipo_user_id;
 
         $user->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');

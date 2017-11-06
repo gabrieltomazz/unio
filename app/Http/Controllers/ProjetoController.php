@@ -40,6 +40,7 @@ class ProjetoController extends Controller
         $projeto->metodo = $request->metodo;
         $projeto->cronograma = $request->cronograma;
         $projeto->departamento_id = $request->departamento_id;
+        $projeto->users_id = $request->users_id;
         $projeto->ref_bibliograficas = $request->ref_bibliograficas;
         $projeto->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');

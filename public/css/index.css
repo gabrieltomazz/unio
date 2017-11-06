@@ -137,7 +137,11 @@ body {
 nav span{
 	background-color: white;
 }
-
+.panel-heading{
+  display: flex;
+  justify-content: center;
+  
+}
 .pagination {
  	display: flex;
   justify-content: center;

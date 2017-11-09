@@ -1,25 +1,12 @@
-#botaouni{
-    font-family: arial;
-    font-weight: 50px;
-    
-}
-body{
-    background-image: url(/books.jpg);
-     background-repeat: no-repeat;
-    background-position: auto;  
-    background-size: cover;
-
-}
-.row.vertical-offset-100{
-  margin-right: 0px;
-  margin-left: 0px;
-
-}
-
-
 .centro{
-	width: 50%;
-  margin: 0 auto;
+
+  margin-left: 5%;
+  border-radius: 15px 0 15px 0;
+  background: rgba(32, 30, 30, 0.44);
+  float: left;
+  margin-top: 2%;
+
+
 }
 
 #welcome-nav{
@@ -29,19 +16,13 @@ body{
    color: white;
 
 }
-.nav .navbar-nav .navbar-right li a{
-    font-size: 120px;
-}
-
-
-
-
 
 #form-control{
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 	margin-left: 25%;
 	margin-right:25%;
 	width: 50%;
+
 }
 
 #form-control-universidade{
@@ -57,20 +38,68 @@ h1{
     text-align: center;
     font-size: 175px;
     font-weight: bold;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 h3{
     margin-top: -30px;
     margin-bottom: 19px;
     text-align: center;
-    font-size: ;
+    margin-left: 0;
+    margin-right: 0;
+    
 }
 
-#botao-entrar{
-	
-	margin-top: 2%;
-	margin-left: 25%;
-	margin-right:25%;
-	margin-bottom: 7%;
-	width: 50%;
+h4{
+    
+    font-family: arial;
+    text-align: center;
+    font-size: 175px;
+    font-weight: bold;
+    color: white!important;
+
+
 }
+
+.button {
+
+  background-color: #1d9ade;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+

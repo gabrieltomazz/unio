@@ -9,7 +9,7 @@ $departamentos = DepartamentoController::getListDepartamentos(); ?>
 @section('content')
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('nerds') }}">Projetos de Pesquisa</a>
+        <a class="navbar-brand" href="{{ URL::to('projetos') }}">Projetos de Pesquisa</a>
     </div>
     <ul class="nav navbar-nav">
         <li><a href="{{ URL::to('projetos') }}">Ver Projetos</a></li>
@@ -62,11 +62,11 @@ $departamentos = DepartamentoController::getListDepartamentos(); ?>
                                             {{ Form::submit('Deletar Projeto', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 
-                                        <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                                        <a class="btn btn-small btn-success" href="{{ URL::to('projetos/' . $value->id) }}">Ver detalhes sobre o projeto</a>
+                                        <?php if ($value->users_id == Auth::id()){ ?>
+                                            <a class="btn btn-small btn-success" href="{{ URL::to('projetos/' . $value->id) }}">Ver detalhes sobre o projeto</a>
 
-                                        <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                                        <a class="btn btn-small btn-info" href="{{ URL::to('projetos/' . $value->id . '/edit') }}">Editar projeto</a>
+                                            <a class="btn btn-small btn-info" href="{{ URL::to('projetos/' . $value->id . '/edit') }}">Editar projeto</a>
+                                        <?php } ?>
 
                                     </td>
                                 </tr>

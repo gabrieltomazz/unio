@@ -1,8 +1,11 @@
-<?php use App\Http\Controllers\UniversidadeController;
+<?php 
+
+use App\Http\Controllers\UniversidadeController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DepartamentoController;
 // $universidades = UniversidadeController::getUniversidades();
 $universidades = UniversidadeController::getListUniversidades(); 
-
+$departamentos = DepartamentoController::getListDepartamentos();
 $cursos =CursoController::getListCursos(); ?>
 
 @extends('base.layout')
@@ -172,7 +175,7 @@ $cursos =CursoController::getListCursos(); ?>
                         <div class="form-group">
                             {{ Form::label('departamento', 'Departamento', array('class' => 'col-md-4 control-label')) }}
                             <div class="col-md-6">
-                                {{ Form::select('departamento', array('0' => 'Selecione Departamento', '1' => 'Biologia', '2' => 'CIC', '3' => 'Exercito'), Input::old('departamento'), array('class' => 'form-control')) }}
+                                {{ Form::select('departamento_id', $departamentos, Input::old('Departamento'), array('class' => 'form-control')) }}
                             </div>
                         </div>
 

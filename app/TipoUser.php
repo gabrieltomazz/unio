@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TipoUser extends Model
 {
     protected $fillable = [
-        'nome',
+        'id','nome',
     ];
     
 }

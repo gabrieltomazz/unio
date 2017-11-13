@@ -19,7 +19,7 @@ $departamentos = DepartamentoController::getListDepartamentos(); ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
 
             <div class="panel panel-default">
 
@@ -57,18 +57,23 @@ $departamentos = DepartamentoController::getListDepartamentos(); ?>
 
                                         <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                                         <!-- we will add this later since its a little more complicated than the other two buttons -->
-                                        {{ Form::open(array('url' => 'projetos/' . $value->id, 'class' => 'pull-right')) }}
-                                            {{ Form::hidden('_method', 'DELETE') }}
-                                            {{ Form::submit('Deletar Projeto', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}
-
-                                        <?php if ($value->users_id == Auth::id()){ ?>
-                                            <a class="btn btn-small btn-success" href="{{ URL::to('projetos/' . $value->id) }}">Ver detalhes sobre o projeto</a>
-
-                                            <a class="btn btn-small btn-info" href="{{ URL::to('projetos/' . $value->id . '/edit') }}">Editar projeto</a>
-                                        <?php } ?>
-
+                                       
+                                            <a class="btn btn-success" href="{{ URL::to('projetos/' . $value->id) }}">Ver detalhes sobre o projeto</a>
                                     </td>
+                                       
+                                            <?php if ($value->users_id == Auth::id()){ ?>
+                                            <td>
+                                            {{ Form::open(array('url' => 'projetos/' . $value->id, 'class' => 'pull-right')) }}
+                                                {{ Form::hidden('_method', 'DELETE') }}
+                                                {{ Form::submit('Deletar Projeto', array('class' => 'btn btn-warning')) }}
+                                            {{ Form::close() }}
+                                            </td>
+                                            <td>
+                                                <a class="btn  btn-info" href="{{ URL::to('projetos/' . $value->id . '/edit') }}">Editar projeto</a>
+                                            </td>
+                                            <?php } ?>
+                                         
+
                                 </tr>
                             @endforeach
                         </tbody>

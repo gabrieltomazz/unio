@@ -22,19 +22,21 @@ $universidades = UniversidadeController::getListUniversidades()?>
     </div>
       
     <div class="centro">
-        <h4> Podemos começar?</h4>
-        <div class="form-group"  id ="form-control-universidade">
-            {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
+        <!-- <h4> Podemos começar?</h4> -->
+        <div id="inputs_welcome">
+          <div class="form-group"  id ="form-control-universidade">
+              {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
+          </div>
+
+          <select  id = "form-control" class="form-control">
+            <option>Aluno</option>
+            <option>Professor</option>
+          </select>
+
+          <button  type="button" class="button" >
+            <span>Entrar</span>
+          </button>
         </div>
-
-        <select  id = "form-control" class="form-control">
-          <option>Aluno</option>
-          <option>Professor</option>
-        </select>
-
-        <button  type="button" class="button" >
-          <span>Entrar</span>
-        </button>
         {{ Form::close() }}  
       
     </div>

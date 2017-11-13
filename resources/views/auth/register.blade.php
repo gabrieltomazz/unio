@@ -91,12 +91,15 @@ $cursos =CursoController::getListCursos(); ?>
                             <div class="form-group">
                                 <label for="sel1" class="col-md-4 control-label" >Currículo:</label>
                                 <div class="col-md-6">
-                                    <div class="file-loading">
+                                    <!-- <div class="file-loading">
                                         <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
                                         data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["pdf"]' data-msg-placeholder="Select {files} for upload...">
 
                                         {{ Form::file('universidade_id', Input::old('Universidade'), array('class' => 'file', 'type' => 'file')) }}
-                                    </div>
+
+                                    </div> -->
+
+                                  {{ Form::file('thefile', ['class' => 'field']) }}
 
                                 </div>
                             </div>

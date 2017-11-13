@@ -10,7 +10,8 @@
 
 @section('content')
 
-@include('base.navbar')
+@include('base.loggednavbar')
+
 
 <div class="container">
     <div class="row">

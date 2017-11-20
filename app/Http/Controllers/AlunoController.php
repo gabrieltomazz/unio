@@ -19,6 +19,7 @@ class AlunoController extends Controller
   
     public function store(AlunoRequest $request)
     {
+        dd($request);
         $aluno = new Aluno;
         $aluno->name        = $request->name;
         $aluno->matricula = $request->matricula;

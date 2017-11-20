@@ -84,6 +84,9 @@ class RegisterController extends Controller
         $user->curso_id = $request->curso_id; 
         $user->tipo_user_id = $request->tipo_user_id;
 
+        $request->thefile->move(
+        base_path() . '/curriculos/', "testepdf");
+
         $user->save();
         return redirect()->route('projetos.index')->with('message', 'projeto created successfully!');
     }

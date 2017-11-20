@@ -64,7 +64,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         // dd($data);
-        
+        // if(Input::hasFile('thefile')){
+        //     $file = Input::file('thefile');
+        //     dd($file);
+        //     $file = $file->move(public_path().'/curriculos/',$file->getOriginalFileName());
+        //     $user->image = $file->getRealPath();
+        //  }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

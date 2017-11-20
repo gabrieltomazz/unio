@@ -31,6 +31,7 @@ class ProjetoController extends Controller
   
     public function store(Request $request)
     {
+    
         $projeto = new Projeto;
         $projeto->titulo = $request->titulo;
         $projeto->apresentacao_do_problema = $request->apresentacao_do_problema;

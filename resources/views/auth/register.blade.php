@@ -57,21 +57,7 @@ $cursos =CursoController::getListCursos(); ?>
 
                              <div class="col-md-6" style="display: none;">
                                 {{ Form::number('tipo_user_id', 1) }}
-                            </div>
-                            
-
-
-                            <div class="form-group">
-                                <label for="Areas" class="col-md-4 control-label">Áreas de interesse:</label>
-
-                                <div class="col-md-6">
-                                    <label><input type="checkbox" value="">Option 1 </label>
-                                    <label><input type="checkbox" value="">Option 2 </label>
-                                    <label><input type="checkbox" value="">Option 3 </label>
-                                </div>
-                            </div>
-
-                            
+                            </div>                    
 
                             <div class="form-group">
                                 {{ Form::label('universidade', 'Universidade', array('class' => 'col-md-4 control-label')) }}
@@ -81,9 +67,16 @@ $cursos =CursoController::getListCursos(); ?>
                             </div>
 
                             <div class="form-group">
+                                {{ Form::label('departamento', 'Departamento', array('class' => 'col-md-4 control-label')) }}
+                                <div class="col-md-6">
+                                    {{ Form::select('departamento_id', $departamentos, Input::old('Departamento'), array('class' => 'form-control')) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                             {{ Form::label('curso', 'Curso', array('class' => 'col-md-4 control-label')) }}
                             <div class="col-md-6">
-                                {{ Form::select('curso_id', $cursos, Input::old('Curso'), array('class' => 'form-control')) }}
+                                {{ Form::select('cursos_id', $cursos, Input::old('Curso'), array('class' => 'form-control')) }}
 
                             </div>
                         </div>

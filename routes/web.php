@@ -27,6 +27,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('projetos', 'ProjetoController');
 Route::get('/projetos/departamento/{departamento_id}', 'ProjetoController@departamento');
 
+Route::get('/alunos', 'AlunoController@index');
+Route::get('/alunos/departamento/{departamento_id}', 'AlunoController@departamento');
+
 
 
 Route::group(['middleware' => 'auth'], function () { 

@@ -21,4 +21,15 @@
     </div>
 </div>
 @endsection
-<meta http-equiv="refresh" content="2;url=/projetos" />
+
+ @foreach($user as $key => $value)
+
+    <?php if ($value->tipo_user_id == 1): ?>
+        <meta http-equiv="refresh" content="2;url=/projetos" /> 
+    <?php endif ?>
+
+    <?php if ($value->tipo_user_id == 2): ?>
+        <meta http-equiv="refresh" content="2;url=/alunos" /> 
+    <?php endif ?>
+
+ @endforeach

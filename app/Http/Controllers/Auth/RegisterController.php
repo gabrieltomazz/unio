@@ -62,22 +62,30 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        // dd($data);
-        // if(Input::hasFile('thefile')){
-        //     $file = Input::file('thefile');
-        //     dd($file);
-        //     $file = $file->move(public_path().'/curriculos/',$file->getOriginalFileName());
-        //     $user->image = $file->getRealPath();
-        //  }
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'universidade_id'=>$data['universidade_id'],
-            'tipo_user_id'=>$data['tipo_user_id'],
-            'biografia'=>$data['biografia']
-        ]);
+    {   
+        if ($data['tipo_user_id'] == 1) {
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'universidade_id'=>$data['universidade_id'],
+                'cursos_id'=>$data['cursos_id'],
+                'departamento_id'=>$data['departamento_id'],
+                'tipo_user_id'=>$data['tipo_user_id'],
+                'biografia'=>$data['biografia']
+            ]);
+        }
+        else{
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'universidade_id'=>$data['universidade_id'],
+                'departamento_id'=>$data['departamento_id'],
+                'tipo_user_id'=>$data['tipo_user_id'],
+                'biografia'=>$data['biografia']
+            ]);
+        }
     }
 
   
@@ -86,6 +94,7 @@ class RegisterController extends Controller
         $user = new User;
         $user->fill($request->all());
         $user->universidade_id = $request->universidade_id;
+        $user->departamento_id = $request->departamento_id;
         $user->curso_id = $request->curso_id; 
         $user->tipo_user_id = $request->tipo_user_id;
 

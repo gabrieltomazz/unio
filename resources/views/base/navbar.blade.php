@@ -10,14 +10,21 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="/register"> <span class="glyphicon glyphicon-user"> Registrar-se</a>
-      </li>
+      <?php if(!Auth::id()){ ?>
+        <li>
+          <a href="/register"> <span class="glyphicon glyphicon-user"> Registrar-se</a>
+        </li>
+        
+        <li>
+          <a href="/login"><span class="glyphicon glyphicon-log-in"> Entrar</a>
+        </li>
+      <?php }else{ ?>
       
-      <li>
-        <a href="/login"><span class="glyphicon glyphicon-log-in"> Entrar</a>
-      </li>
+        <li><a href="{{ URL::to('/logout') }}">Logout</a></li>
+      <?php } ?>
+
+       
+
     </ul>
-    
   </div>
 </nav>

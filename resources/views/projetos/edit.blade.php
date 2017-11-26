@@ -92,6 +92,16 @@
 						</div>
 					</div>
 
+					<?php if (Auth::check()){ ?>
+	                     <div class="form-group" style="display: none;">
+	                        {{ Form::label('users_id', 'User', array('class' => 'col-md-4 control-label')) }}
+	                        <div class="col-md-6">
+	                            {{ Form::number('users_id', Auth::id()) }}
+	                        </div>
+	                    </div>
+
+                    <?php } ?>
+
 
 
 				{{ Form::submit('Edit the projeto!', array('class' => 'btn btn-primary')) }}

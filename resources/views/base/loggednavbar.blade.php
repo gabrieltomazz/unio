@@ -11,6 +11,7 @@
 	    <li><a href="{{ URL::to('projetos/create') }}">Criar um projeto</a>
 	  </ul>
 	  <ul class="nav navbar-nav navbar-right">
+	  	<li><a href="{{ URL::to('/usuario') }}">{{ Auth::user()->name }}</a></li>
 		<li><a href="{{ URL::to('/logout') }}">Logout</a></li>
 	  </ul>
 	</div>

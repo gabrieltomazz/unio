@@ -27,5 +27,11 @@ class AlunoController extends Controller
         // return View::make('projetos.departamento',['projetos' => $projetos]);
         return View::make('alunos.departamento')->with('users', $users);
     }
+
+    public function getUsuario(){
+
+        return view('alunos.usuario');
+
+    }
   
 }

@@ -28,6 +28,7 @@ Route::get('/projetos/departamento/{departamento_id}', 'ProjetoController@depart
 
 Route::get('/alunos', 'AlunoController@index');
 Route::get('/alunos/departamento/{departamento_id}', 'AlunoController@departamento');
+Route::get('/usuario', 'AlunoController@getUsuario')->name('usuario');
 // Route::get('/projetos', 'ProjetoController@index');
 // Route::get('/projetos/{projeto}', 'ProjetoController@show');
 //Route::get('/departamentos','Departamento@getListDepartamentos');

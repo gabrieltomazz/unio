@@ -19,7 +19,7 @@
           <a href="/login"><span class="glyphicon glyphicon-log-in"> Entrar</a>
         </li>
       <?php }else{ ?>
-      
+        <li><a>{{ Auth::user()->name }}</a></li>
         <li><a href="{{ URL::to('/logout') }}">Logout</a></li>
       <?php } ?>
 

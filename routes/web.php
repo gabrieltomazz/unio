@@ -24,17 +24,19 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('projetos', 'ProjetoController');
 Route::get('/projetos/departamento/{departamento_id}', 'ProjetoController@departamento');
 
 Route::get('/alunos', 'AlunoController@index');
 Route::get('/alunos/departamento/{departamento_id}', 'AlunoController@departamento');
+Route::get('/projetos', 'ProjetoController@index');
 
 
 
 Route::group(['middleware' => 'auth'], function () { 
-
-	Route::resource('projetos', 'ProjetoController');
-
-
+	Route::post('/projetos/{projeto}', 'ProjetoController@show');
+	Route::post('/projetos', 'ProjetoController@store');
+	Route::post('/projetos/create', 'ProjetoController@create');
+	Route::post('/projetos/{projetos}', 'ProjetoController@update');
+	Route::post('/projetos/{projetos}','ProjetoController@destroy');
+	Route::get('/projetos/{projetos}/edit','ProjetoController@edit');
 });

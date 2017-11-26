@@ -29,8 +29,8 @@ $universidades = UniversidadeController::getListUniversidades()?>
           </div>
 
           <select  id = "form-control" class="form-control">
-            <option>Aluno</option>
-            <option>Professor</option>
+            <option valeu="1">Aluno</option>
+            <option valeu="2">Professor</option>
           </select>
 
           <button  type="button" class="button" >
@@ -41,6 +41,12 @@ $universidades = UniversidadeController::getListUniversidades()?>
       
     </div>
   </div>
+
+  <script type="text/javascript">
+    
+
+    
+  </script>
 
 @endsection
 

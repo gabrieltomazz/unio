@@ -39,7 +39,7 @@ $departamentos = (object)$departamentos;
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h1 class="my-4">Projetos por Departamento</h1>
+            <h1 class="my-4">Alunos por Departamento</h1>
           </div>
           <div class="row">
             <div class="col-md-8 col-md-offset-2">

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Projeto extends Model
 {
-    protected $fillable = ["users_id","titulo","apresentacao_do_problema","estado_da_arte","justificativa_do_projeto","objetivo","metodo","cronograma","ref_bibliograficas", "id_universidade"];
+    protected $fillable = ["users_id","titulo","apresentacao_do_problema","estado_da_arte","justificativa_do_projeto","objetivo","metodo","cronograma","ref_bibliograficas", "departamento_id"];
     protected $guarded = ['id', 'created_at', 'update_at'];
     protected $table = 'projetos';
 

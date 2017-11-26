@@ -29,14 +29,16 @@ Route::get('/projetos/departamento/{departamento_id}', 'ProjetoController@depart
 Route::get('/alunos', 'AlunoController@index');
 Route::get('/alunos/departamento/{departamento_id}', 'AlunoController@departamento');
 Route::get('/projetos', 'ProjetoController@index');
-
-
+Route::get('/projetos/{projeto}', 'ProjetoController@show');
+//Route::get('/departamentos','Departamento@getListDepartamentos');
 
 Route::group(['middleware' => 'auth'], function () { 
-	Route::post('/projetos/{projeto}', 'ProjetoController@show');
+	//Route::resource('projetos', 'ProjetoController'); 
+	
 	Route::post('/projetos', 'ProjetoController@store');
-	Route::post('/projetos/create', 'ProjetoController@create');
-	Route::post('/projetos/{projetos}', 'ProjetoController@update');
+	Route::get('/projetos/create', 'ProjetoController@create');
+	Route::get('/projetos/{projetos}', 'ProjetoController@update');
 	Route::post('/projetos/{projetos}','ProjetoController@destroy');
 	Route::get('/projetos/{projetos}/edit','ProjetoController@edit');
+
 });

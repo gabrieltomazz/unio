@@ -28,12 +28,12 @@ $universidades = UniversidadeController::getListUniversidades()?>
               {{ Form::select('universidade_id', $universidades, Input::old('Universidade'), array('class' => 'form-control')) }}
           </div>
 
-          <select  id = "form-control" class="form-control">
-            <option valeu="1">Aluno</option>
-            <option valeu="2">Professor</option>
+          <select  id = "form-control" class="form-control" name="selectedValue">
+            <option value="1" id="1" >Aluno</option>
+            <option value="2" id="2" >Professor</option>
           </select>
 
-          <button  type="button" class="button" >
+          <button onclick="redirecionar()" type="button" class="button" >
             <span>Entrar</span>
           </button>
         </div>
@@ -43,9 +43,16 @@ $universidades = UniversidadeController::getListUniversidades()?>
   </div>
 
   <script type="text/javascript">
-    
+    function redirecionar() {
+      
+      if (document.getElementById('form-control').value == 1) {
+         document.location = "/projetos";
+      } else {
+          document.location = "/alunos";
+      }
+    }
 
-    
+
   </script>
 
 @endsection

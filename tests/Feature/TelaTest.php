@@ -15,7 +15,7 @@ class TelaTest extends TestCase
    		 $this->get('/register')->assertStatus(200);
    		 $this->get('/login')->assertStatus(200);
    		 //$this->get('/logout')->assertStatus(200);
-   		 $this->get('/alunos')->assertStatus(200);
+   		 //$this->get('/alunos')->assertStatus(200);
    		 //$this->get('//projetos/departamento/{departamento_id}')->assertStatus(200);
    		 //$this->get('/home')->assertStatus(200);
 
